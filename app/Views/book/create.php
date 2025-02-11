@@ -9,7 +9,7 @@
         /* Gaya Umum */
         body {
             font-family: 'Arial', sans-serif;
-            background: url('<?= base_url('public/img/perpustakaan.jpg')?>');
+            background: url('<?= base_url('public/img/wall.jpg')?>');
             text-align: center;
             margin: 0;
             padding: 20px;
@@ -150,13 +150,13 @@
             <?php if (!empty($books)): ?>
                 <?php foreach ($books as $book): ?>
                     <tr>
-                        <td><?= $book['id']; ?></td>
+                        <td><?= $book['id_book']; ?></td>
                         <td><?= $book['title']; ?></td>
                         <td><?= $book['author']; ?></td>
                         <td><?= $book['published_year']; ?></td>
                         <td class="action-buttons">
-                            <a href="<?= base_url('book/edit/' . $book['id']) ?>" class="edit">Edit</a>
-                            <a href="<?= base_url('book/delete/' . $book['id']) ?>" class="delete" onclick="return confirm('Yakin ingin menghapus buku ini?');">Hapus</a>
+                            <a href="<?= base_url('book/edit/' . $book['id_book']) ?>" class="edit">Edit</a>
+                            <a href="<?= base_url('book/delete/' . $book['id_book']) ?>" class="delete" onclick="return confirm('Yakin ingin menghapus buku ini?');">Hapus</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

@@ -37,7 +37,7 @@
 
 <body>
     <h2>Edit Customer</h2>
-    <form method="post" action="<?= base_url('customers/update/' . $customer['id']) ?>">
+    <form method="post" action="<?= base_url('customers/update/' . $customer['id_customer']) ?>">
         <input type="text" name="name" value="<?= $customer['name']; ?>" required>
         <input type="text" name="email" value="<?= $customer['email']; ?>" required>
         <button type="submit">Update</button>

@@ -8,13 +8,15 @@ class LoanModel extends Model
 {
     protected $table = 'loans';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['customer_id', 'book_id', 'loan_date', 'return_date', 'status'];
+    protected $allowedFields = ['book_id', 'customer_id', 'loan_date', 'return_date'];
 
     public function getLoans()
     {
-        return $this->select('loans.*, customers.name as customer_name, books.title as book_title')
-                    ->join('customers', 'customers.id = loans.customer_id')
-                    ->join('books', 'books.id = loans.book_id')
-                    ->findAll();
+        return $this->db->table('loans')
+            ->select('loans.*, books.title AS book_title, customers.name AS customer_name')
+            ->join('books', 'books.id_book = loans.book_id', 'left')
+            ->join('customers', 'customers.id_customer = loans.customer_id', 'left')
+            ->get()
+            ->getResultArray();
     }
 }

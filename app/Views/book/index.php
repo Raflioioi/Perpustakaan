@@ -10,7 +10,7 @@
             margin: 0;
             padding: 0;
             text-align: center;
-            background: url('<?= base_url('public/img/perpustakaan.jpg')?>');
+            background: url('<?= base_url('public/img/wall.jpg')?>');
             background-size: cover;
             color: white;
         }

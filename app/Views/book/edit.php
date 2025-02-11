@@ -37,7 +37,7 @@
 
 <body>
     <h2>Edit Buku</h2>
-    <form method="post" action="<?= base_url('book/update/' . $book['id']) ?>">
+    <form method="post" action="<?= base_url('book/update/' . $book['id_book']) ?>">
         <input type="text" name="title" value="<?= $book['title']; ?>" required>
         <input type="text" name="author" value="<?= $book['author']; ?>" required>
         <input type="number" name="published_year" value="<?= $book['published_year']; ?>" required>

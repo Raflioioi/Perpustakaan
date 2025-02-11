@@ -30,17 +30,17 @@ class BookController extends BaseController
         return redirect()->to('/book/create');
     }
 
-    public function edit($id)
+    public function edit($id_book)
     {
         $model = new BookModel();
-        $data['book'] = $model->find($id);
+        $data['book'] = $model->find($id_book);
         return view('book/edit', $data);
     }
 
-    public function update($id)
+    public function update($id_book)
     {
         $model = new BookModel();
-        $model->update($id, [
+        $model->update($id_book, [
             'title' => $this->request->getPost('title'),
             'author' => $this->request->getPost('author'),
             'published_year' => $this->request->getPost('published_year')
@@ -48,10 +48,10 @@ class BookController extends BaseController
         return redirect()->to('/book');
     }
 
-    public function delete($id)
+    public function delete($id_book)
     {  
         $model = new BookModel();
-        $model->delete($id);
+        $model->delete($id_book);
         return redirect()->to('/book');
     }
 }

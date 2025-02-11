@@ -45,20 +45,20 @@ class CustomerController extends Controller
         return redirect()->to('/customers')->with('success', 'Pelanggan berhasil ditambahkan!');
     }
 
-    public function edit($id)
+    public function edit($id_customer)
     {
         $customerModel = new CustomerModel();
-        $data['customer'] = $customerModel->find($id);
+        $data['customer'] = $customerModel->find($id_customer);
 
         return view('customer/edit', $data);
     }
 
-    public function update($id)
+    public function update($id_customer)
     {
         $customerModel = new CustomerModel();
 
         // Update data pelanggan
-        $customerModel->update($id, [
+        $customerModel->update($id_customer, [
             'name' => $this->request->getPost('name'),
             'email' => $this->request->getPost('email'),
         ]);
@@ -66,10 +66,10 @@ class CustomerController extends Controller
         return redirect()->to('/customers')->with('success', 'Pelanggan berhasil diperbarui!');
     }
 
-    public function delete($id)
+    public function delete($id_customer)
     {
         $customerModel = new CustomerModel();
-        $customerModel->delete($id);
+        $customerModel->delete($id_customer);
 
         return redirect()->to('/customers')->with('success', 'Pelanggan berhasil dihapus!');
     }

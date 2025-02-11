@@ -52,6 +52,7 @@ $routes->post('loans/update/(:any)', 'LoanController::update/$1');
 $routes->get('loans/delete/(:any)', 'LoanController::delete/$1');
 
 
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

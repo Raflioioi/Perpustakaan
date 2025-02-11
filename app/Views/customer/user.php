@@ -9,14 +9,14 @@
         /* Gaya Umum */
         body {
             font-family: 'Arial', sans-serif;
-            background: url('<?= base_url('public/img/buku.jpg')?>');
+            background: url('<?= base_url('public/img/paper.jpg')?>');
             text-align: center;
             margin: 0;
             padding: 20px;
         }
 
         h2 {
-            color: white;
+            color: black;
         }
 
         /* Gaya Form */
@@ -148,12 +148,12 @@
             <?php if (!empty($customers)): ?>
                 <?php foreach ($customers as $cust): ?>
                     <tr>
-                        <td><?= $cust['id']; ?></td>
+                        <td><?= $cust['id_customer']; ?></td>
                         <td><?= $cust['name']; ?></td>
                         <td><?= $cust['email']; ?></td>
                         <td class="action-buttons">
-                        <a href="<?= base_url('customers/edit/' . $cust['id']) ?>" class="edit">Edit</a>
-                        <a href="<?= base_url('customers/delete/' . $cust['id']) ?>" class="delete" onclick="return confirm('Yakin ingin menghapus buku ini?');">Hapus</a>
+                        <a href="<?= base_url('customers/edit/' . $cust['id_customer']) ?>" class="edit">Edit</a>
+                        <a href="<?= base_url('customers/delete/' . $cust['id_customer']) ?>" class="delete" onclick="return confirm('Yakin ingin menghapus buku ini?');">Hapus</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
